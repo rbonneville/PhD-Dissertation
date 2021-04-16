@@ -1,0 +1,219 @@
+\chapter{Additional test results for mSINGS, MSISensor, and MANTIS}
+\label{app.msi_validation}
+
+\begin{table}[H]
+    \begin{subtable}{\textwidth}
+        \small
+        \centering
+        \begin{tabular}{l:llll}
+            \textbf{Disease} & \textbf{MSI-H} & \textbf{MSS} & \textbf{Total} & \textbf{Sequencing Center} \\
+            \hline
+            COAD/READ & 38 & 38 & 76 & Multiple \\
+            UCEC & 49 & 50 & 99 & WUGSC \\
+            STAD & 50 & 50 & 100 & BI \\
+            ESCA & 2 & 69 & 71 & BI \\
+            UCS & 2 & 51 & 53 & BI \\
+            PRAD & 1 & 58 & 59 & Multiple \\
+            \hline
+            Combined & 142 & 316 & 458 &
+        \end{tabular}
+        \caption{}\label{table:msilandscape:test_samples_count}
+    \end{subtable}
+    
+    \vspace{1cm}
+    \begin{subtable}{\textwidth}
+        \small
+        \centering
+        \begin{tabular}{lllll}
+            \textbf{Disease} & \textbf{Sequencing Center} & \textbf{MSI-H} & \textbf{MSS} & \textbf{Total} \\
+            \hline
+            COAD & BCM & 33 & 18 & 51 \\
+            COAD & WUGSC & 4 & 9 & 13 \\
+            READ & BCM & 1 & 7 & 8 \\
+            READ & WUGSC & 0 & 4 & 4 \\
+            PRAD & BI & 1 & 50 & 51 \\
+            PRAD & UM & 0 & 8 & 8
+        \end{tabular}
+        \caption{}\label{table:msilandscape:test_samples_bycenter}
+    \end{subtable}
+    \caption[Breakdown of samples used for testing of MSI calling tools.]{(\subref{table:msilandscape:test_samples_count}) Number of samples from each cancer type used for testing and analysis of MSI calling tools. (\subref{table:msilandscape:test_samples_bycenter}) Breakdown of COAD, READ and PRAD samples by cancer type and sequencing center. WUGSC: Washington University Genome Sequencing Center. BI: Broad Institute of MIT and Harvard. BCM: Baylor College of Medicine. UM: University of Michigan. COAD: Colon Adenocarcinoma. READ: Rectal Adenocarcinoma.}
+    \label{table:msilandscape:test_samples_breakdown}
+\end{table}
+
+\begin{table}[H]
+    \begin{subtable}{\textwidth}
+        \centering
+        \begin{tabular}{l|rr:rr:rr}
+            \textbf{Tool:} & \multicolumn{2}{c:}{\textbf{\ul{mSINGS}}} & \multicolumn{2}{c:}{\textbf{\ul{MSISensor}}} & \multicolumn{2}{c}{\textbf{\ul{MANTIS}}} \\
+            \textbf{Source:} & \multicolumn{1}{l}{\textbf{BI}} & \multicolumn{1}{l:}{\textbf{BCM}} & \multicolumn{1}{l}{\textbf{BI}} & \multicolumn{1}{l:}{\textbf{BCM}} & \multicolumn{1}{l}{\textbf{BI}} & \multicolumn{1}{l}{\textbf{BCM}} \\
+            \hline
+            TCGA-A6-2686 & 0.5802 & 0.3924 & 87.84 & 87.84 & 1.1730 & 1.1730 \\
+            TCGA-A6-3809 & 0.4528 & 0.5013 & 77.35 & 77.69 & 0.9693 & 0.9389 \\
+            TCGA-CK-4951 & 0.4229 & 0.2615 & 61.38 & 61.38 & 0.7698 & 0.7698 \\
+            TCGA-CM-4746 & 0.4224 & 0.4828 & 62.68 & 63.3  & 0.8617 & 0.8315 \\
+            \hline
+            $r^2$ & \multicolumn{2}{l:}{$\mathbf{5.52 \times 10^{-7}}$} & \multicolumn{2}{l:}{$\mathbf{0.999508}$} & \multicolumn{2}{l}{$\mathbf{0.990615}$}
+        \end{tabular}
+        \caption{}\label{table:msilandscape:coadread_by_site}
+    \end{subtable}
+    
+    \vspace{1cm}
+    \begin{subtable}{\textwidth}
+        \centering
+        \begin{tabular}{l|rr:rr:rr}
+            \textbf{Tool:} & \multicolumn{2}{c:}{\textbf{\ul{mSINGS}}} & \multicolumn{2}{c:}{\textbf{\ul{MSISensor}}} & \multicolumn{2}{c}{\textbf{\ul{MANTIS}}} \\
+            \textbf{Source:} & \multicolumn{1}{l}{\textbf{BI}} & \multicolumn{1}{l:}{\textbf{BCM}} & \multicolumn{1}{l}{\textbf{BI}} & \multicolumn{1}{l:}{\textbf{BCM}} & \multicolumn{1}{l}{\textbf{BI}} & \multicolumn{1}{l}{\textbf{BCM}} \\
+            \hline
+            TCGA-A5-A0GG & 0.1809 & 0.1845 & 21.95 & 21.89 & 0.4113 & 0.4125 \\
+            TCGA-AP-A0LS & 0.2238 & 0.2325 & 52.36 & 51.98 & 0.8349 & 0.8278 \\
+            TCGA-AP-A1DK & 0.1478 & 0.1437 & 22.9  & 23.19 & 0.5287 & 0.5307 \\
+            TCGA-AX-A06H & 0.3877 & 0.3921 & 59.58 & 58.99 & 0.6032 & 0.6052 \\
+            TCGA-AX-A1C9 & 0.099 & 0.0938 & 33.07 & 32.22 & 0.5654 & 0.5669 \\
+            TCGA-AX-A2HD & 0.3203 & 0.3333 & 70.07 & 70.04 & 0.9848 & 0.9841 \\
+            TCGA-B5-A11H & 0.3792 & 0.3959 & 87.2  & 87.2  & 0.9698 & 0.9591 \\
+            TCGA-BG-A0VW & 0.2254 & 0.2363 & 51.41 & 51.57 & 0.5600  & 0.5592 \\
+            TCGA-BG-A18B & 0.2291 & 0.2233 & 66.56 & 66.56 & 0.8074 & 0.8076 \\
+            TCGA-BS-A0TA & 0.3606 & 0.3695 & 53.89 & 54.27 & 0.5834 & 0.5831 \\
+            TCGA-BS-A0V4 & 0.1381 & 0.1455 & 35.16 & 35.07 & 0.6156 & 0.6143 \\
+            TCGA-D1-A176 & 0.2303 & 0.2263 & 54.85 & 54.7  & 0.6719 & 0.6701 \\
+            TCGA-D1-A177 & 0.3162 & 0.3154 & 77.22 & 77.26 & 1.0279 & 1.0224 \\
+            TCGA-D1-A1NS & 0.144 & 0.1502 & 22.03 & 21.57 & 0.5149 & 0.5162 \\
+            TCGA-D1-A2G6 & 0.0696 & 0.083 & 0.21  & 0.21  & 0.3346 & 0.3359 \\
+            TCGA-EC-A24G & 0.1105 & 0.1251 & 26.8  & 26.33 & 0.5147 & 0.5184 \\
+            TCGA-EY-A1GF & 0.1612 & 0.1664 & 51.19 & 50.95 & 0.7162 & 0.7119 \\
+            TCGA-EY-A1GU & 0.2328 & 0.2305 & 61    & 60.66 & 0.9327 & 0.9318 \\
+            TCGA-EY-A1H0 & 0.3288 & 0.3239 & 67.35 & 67.39 & 0.9545 & 0.9473 \\
+            TCGA-EY-A215 & 0.308 & 0.3043 & 59.49 & 58.84 & 0.8958 & 0.8974 \\
+            \hline
+            $r^2$ & \multicolumn{2}{l:}{$\mathbf{0.994194}$} & \multicolumn{2}{l:}{$\mathbf{0.999791}$} & \multicolumn{2}{l}{$\mathbf{0.999808}$}
+            \end{tabular}
+        \caption{}\label{table:msilandscape:ucec_by_site}
+    \end{subtable}
+    \caption[MSI calling tools results within samples sequenced at multiple locations.]{The results of mSINGS, MSISensor and MANTIS over a set of 4 COAD/READ MSI-H tumor-normal pairs (\subref{table:msilandscape:coadread_by_site}) and 20 UCEC MSI-H samples (\subref{table:msilandscape:ucec_by_site}) that were sequenced at two different sequencing centers. The Pearson correlation coefficient of the tool scores between sequencing centers is provided for each tumor type and tool. BI: Broad Institute of MIT and Harvard. BCM: Baylor College of Medicine. WUGSC: Washington University Genome Sequencing Center.}
+    \label{table:msilandscape:test_results_by_site}
+\end{table}
+
+\begin{table}[H]
+    \begin{subtable}{\textwidth}
+        \scriptsize
+        \centering
+        \begin{tabular}{l|rrrrrrr:}
+            & \multicolumn{7}{c:}{\textbf{\ul{mSINGS}}} \\
+            & \multicolumn{1}{l}{\textbf{COAD/READ}} & \multicolumn{1}{l}{\textbf{UCEC}} & \multicolumn{1}{l}{\textbf{STAD}} & \multicolumn{1}{l}{\textbf{ESCA}} & \multicolumn{1}{l}{\textbf{UCS}} & \multicolumn{1}{l}{\textbf{PRAD}} & \multicolumn{1}{l:}{\textbf{Overall}} \\
+            \hline
+            Threshold: & 0.2   & 0.2   & 0.2   & 0.2   & 0.2   & 0.2   & 0.2 \\
+            TP:   & 32    & 26    & 46    & 2     & 1     & 1     & 108 \\
+            FP:   & 0     & 0     & 0     & 0     & 0     & 1     & 1 \\
+            TN:   & 38    & 50    & 50    & 69    & 51    & 57    & 315 \\
+            FN:   & 6     & 23    & 4     & 0     & 1     & 0     & 34 \\
+            \textbf{Sensitivity:} & \textbf{84.21\%} & \textbf{53.06\%} & \textbf{92.00\%} & \textbf{100.00\%} & \textbf{50.00\%} & \textbf{100.00\%} & \textbf{76.06\%} \\
+            \hphantom{---}Lower bound (95\% CI): & 68.07\% & 38.42\% & 79.89\% & 19.79\% & 2.67\% & 5.46\% & 68.03\% \\
+            \hphantom{---}Upper bound (95\% CI): & 93.41\% & 67.22\% & 97.41\% & 100.00\% & 97.33\% & 100.00\% & 82.64\% \\
+            \textbf{Specificity:} & \textbf{100.00\%} & \textbf{100.00\%} & \textbf{100.00\%} & \textbf{100.00\%} & \textbf{100.00\%} & \textbf{98.28\%} & \textbf{99.68\%} \\
+            \hphantom{---}Lower bound (95\% CI): & 88.57\% & 91.11\% & 91.11\% & 93.43\% & 91.27\% & 89.54\% & 97.97\% \\
+            \hphantom{---}Upper bound (95\% CI): & 100.00\% & 100.00\% & 100.00\% & 100.00\% & 100.00\% & 99.91\% & 99.98\% \\
+            \textbf{Error rate:} & \textbf{7.89\%} & \textbf{23.23\%} & \textbf{4.00\%} & \textbf{0.00\%} & \textbf{1.89\%} & \textbf{1.69\%} & \textbf{7.64\%} \\
+            \textbf{Accuracy:} & \textbf{92.11\%} & \textbf{76.77\%} & \textbf{96.00\%} & \textbf{100.00\%} & \textbf{98.11\%} & \textbf{98.31\%} & \textbf{92.36\%} \\
+        \end{tabular}
+        \caption{}\label{table:msilandscape:detailed_perf_msings}
+    \end{subtable}
+    
+    \vspace{0.5cm}
+    \begin{subtable}{\textwidth}
+        \scriptsize
+        \centering
+        \begin{tabular}{l|rrrrrrr:}
+            & \multicolumn{7}{c:}{\textbf{\ul{MSISensor}}} \\
+            & \multicolumn{1}{l}{\textbf{COAD/READ}} & \multicolumn{1}{l}{\textbf{UCEC}} & \multicolumn{1}{l}{\textbf{STAD}} & \multicolumn{1}{l}{\textbf{ESCA}} & \multicolumn{1}{l}{\textbf{UCS}} & \multicolumn{1}{l}{\textbf{PRAD}} & \multicolumn{1}{l:}{\textbf{Overall}} \\
+            \hline
+            Threshold: & 3.5   & 3.5   & 3.5   & 3.5   & 3.5   & 3.5   & 3.5 \\
+            TP:   & 35    & 48    & 49    & 2     & 2     & 1     & 137 \\
+            FP:   & 3     & 1     & 0     & 0     & 0     & 0     & 4 \\
+            TN:   & 35    & 49    & 50    & 69    & 51    & 58    & 312 \\
+            FN:   & 3     & 1     & 1     & 0     & 0     & 0     & 5 \\
+            \textbf{Sensitivity:} & \textbf{92.11\%} & \textbf{97.96\%} & \textbf{98.00\%} & \textbf{100.00\%} & \textbf{100.00\%} & \textbf{100.00\%} & \textbf{96.48\%} \\
+            \hphantom{---}Lower bound (95\% CI): & 77.52\% & 87.76\% & 87.99\% & 19.79\% & 19.79\% & 5.46\% & 91.55\% \\
+            \hphantom{---}Upper bound (95\% CI): & 97.94\% & 99.89\% & 99.90\% & 100.00\% & 100.00\% & 100.00\% & 98.70\% \\
+            \textbf{Specificity:} & \textbf{92.11\%} & \textbf{98.00\%} & \textbf{100.00\%} & \textbf{100.00\%} & \textbf{100.00\%} & \textbf{100.00\%} & \textbf{98.73\%} \\
+            \hphantom{---}Lower bound (95\% CI): & 77.52\% & 87.99\% & 91.11\% & 93.43\% & 91.27\% & 92.26\% & 96.57\% \\
+            \hphantom{---}Upper bound (95\% CI): & 97.94\% & 99.90\% & 100.00\% & 100.00\% & 100.00\% & 100.00\% & 99.59\% \\
+            \textbf{Error rate:} & \textbf{7.89\%} & \textbf{2.02\%} & \textbf{1.00\%} & \textbf{0.00\%} & \textbf{0.00\%} & \textbf{0.00\%} & \textbf{1.97\%} \\
+            \textbf{Accuracy:} & \textbf{92.11\%} & \textbf{97.98\%} & \textbf{99.00\%} & \textbf{100.00\%} & \textbf{100.00\%} & \textbf{100.00\%} & \textbf{98.03\%} \\
+        \end{tabular}
+        \caption{}\label{table:msilandscape:detailed_perf_msisensor}
+    \end{subtable}
+
+    \vspace{0.5cm}
+    \begin{subtable}{\textwidth}
+        \scriptsize
+        \centering
+        \begin{tabular}{l|rrrrrrr:}
+            & \multicolumn{7}{c:}{\textbf{\ul{MANTIS}}} \\
+            & \multicolumn{1}{l}{\textbf{COAD/READ}} & \multicolumn{1}{l}{\textbf{UCEC}} & \multicolumn{1}{l}{\textbf{STAD}} & \multicolumn{1}{l}{\textbf{ESCA}} & \multicolumn{1}{l}{\textbf{UCS}} & \multicolumn{1}{l}{\textbf{PRAD}} & \multicolumn{1}{l:}{\textbf{Overall}} \\
+            \hline
+            Threshold: & 0.4   & 0.4   & 0.4   & 0.4   & 0.4   & 0.4   & 0.4 \\
+            TP:   & 38    & 45    & 50    & 2     & 2     & 1     & 138 \\
+            FP:   & 1     & 0     & 0     & 0     & 0     & 0     & 1 \\
+            TN:   & 37    & 50    & 50    & 69    & 51    & 58    & 315 \\
+            FN:   & 0     & 4     & 0     & 0     & 0     & 0     & 4 \\
+            \textbf{Sensitivity:} & \textbf{100.00\%} & \textbf{91.84\%} & \textbf{100.00\%} & \textbf{100.00\%} & \textbf{100.00\%} & \textbf{100.00\%} & \textbf{97.18\%} \\
+            \hphantom{---}Lower bound (95\% CI): & 88.57\% & 79.52\% & 91.11\% & 19.79\% & 19.79\% & 5.46\% & 92.50\% \\
+            \hphantom{---}Upper bound (95\% CI): & 100.00\% & 97.35\% & 100.00\% & 100.00\% & 100.00\% & 100.00\% & 99.09\% \\
+            \textbf{Specificity:} & \textbf{97.37\%} & \textbf{100.00\%} & \textbf{100.00\%} & \textbf{100.00\%} & \textbf{100.00\%} & \textbf{100.00\%} & \textbf{99.68\%} \\
+            \hphantom{---}Lower bound (95\% CI): & 84.57\% & 91.11\% & 91.11\% & 93.43\% & 91.27\% & 92.26\% & 97.97\% \\
+            \hphantom{---}Upper bound (95\% CI): & 99.86\% & 100.00\% & 100.00\% & 100.00\% & 100.00\% & 100.00\% & 99.98\% \\
+            \textbf{Error rate:} & \textbf{1.32\%} & \textbf{4.04\%} & \textbf{0.00\%} & \textbf{0.00\%} & \textbf{0.00\%} & \textbf{0.00\%} & \textbf{1.09\%} \\
+            \textbf{Accuracy:} & \textbf{98.68\%} & \textbf{95.96\%} & \textbf{100.00\%} & \textbf{100.00\%} & \textbf{100.00\%} & \textbf{100.00\%} & \textbf{98.91\%} \\
+        \end{tabular}
+        \caption{}\label{table:msilandscape:detailed_perf_mantis}
+    \end{subtable}
+    \caption[Detailed performance statistics of mSINGS, MSISensor, and MANTIS.]{The performance of mSINGS (\subref{table:msilandscape:detailed_perf_msings}), MSISensor (\subref{table:msilandscape:detailed_perf_msisensor}), and MANTIS (\subref{table:msilandscape:detailed_perf_mantis}) over all 458 pairs from the COAD/READ, UCEC, STAD, ESCA, UCS and PRAD test cohorts.}
+    \label{table:msilandscape:detailed_perf}
+\end{table}
+
+\begin{landscape}
+    \begin{table}[H]
+        \begin{subtable}{\textheight}
+            \centering
+            \begin{tabular}{r|l|rrrrrrrrr:r}
+                \multicolumn{2}{r|}{} & \multicolumn{10}{c}{Number of Loci:} \\
+                \multicolumn{2}{c|}{\textbf{COAD/READ}} & 10 & 20 & 30 & 40 & 50 & 100 & 250 & 500 & 1000 & 2539 \\
+                \hline
+                & mSINGS & 94.74\% & 94.74\% & 94.74\% & 98.68\% & 97.37\% & 96.05\% & 92.11\% & 93.42\% & 93.42\% & 92.11\% \\
+                Tool: & MSISensor & 84.75\% & 84.29\% & 88.57\% & 88.57\% & 87.14\% & 80.82\% & 85.33\% & 84.00\% & 88.16\% & 92.11\% \\
+                & MANTIS & 100.00\% & 98.59\% & 98.61\% & 98.61\% & 98.63\% & 100.00\% & 100.00\% & 98.68\% & 98.68\% & 98.68\%
+            \end{tabular}
+            \caption{}\label{table:msilandscape:loci_number_perf_coadread}
+        \end{subtable}
+
+        \vspace{0.3cm}
+        \begin{subtable}{\textheight}
+            \centering
+            \begin{tabular}{r|l|rrrrrrrrr:r}
+                \multicolumn{2}{r|}{} & \multicolumn{10}{c}{Number of Loci:} \\
+                \multicolumn{2}{c|}{\textbf{UCEC}} & 10 & 20 & 30 & 40 & 50 & 100 & 250 & 500 & 1000 & 2539 \\
+                \hline
+                & mSINGS & 93.94\% & 92.93\% & 94.95\% & 95.96\% & 94.95\% & 91.92\% & 88.89\% & 83.84\% & 79.80\% & 76.77\% \\
+                Tool: & MSISensor & 91.92\% & 90.91\% & 87.88\% & 91.92\% & 90.91\% & 93.94\% & 96.97\% & 96.97\% & 97.98\% & 97.98\% \\
+                & MANTIS & 95.96\% & 94.95\% & 93.94\% & 94.95\% & 94.95\% & 93.94\% & 92.93\% & 92.93\% & 92.93\% & 95.96\%
+            \end{tabular}
+            \caption{}\label{table:msilandscape:loci_number_perf_ucec}
+        \end{subtable}
+
+        \vspace{0.3cm}
+        \begin{subtable}{\textheight}
+            \centering
+            \begin{tabular}{r|l|rrrrrrrrr:r}
+                \multicolumn{2}{r|}{} & \multicolumn{10}{c}{Number of Loci:} \\
+                \multicolumn{2}{c|}{\textbf{STAD}} & 10 & 20 & 30 & 40 & 50 & 100 & 250 & 500 & 1000 & 2539 \\
+                \hline
+                & mSINGS & 90.00\% & 99.00\% & 100.00\% & 100.00\% & 100.00\% & 98.00\% & 98.00\% & 96.00\% & 96.00\% & 96.00\% \\
+                Tool: & MSISensor & 95.00\% & 92.00\% & 94.00\% & 94.00\% & 95.00\% & 97.00\% & 99.00\% & 99.00\% & 99.00\% & 99.00\% \\
+                & MANTIS & 98.00\% & 99.00\% & 99.00\% & 99.00\% & 99.00\% & 99.00\% & 99.00\% & 99.00\% & 99.00\% & 100.00\%
+            \end{tabular}
+            \caption{}\label{table:msilandscape:loci_number_perf_stad}
+        \end{subtable}
+        \caption[Performance of mSINGS, MSISensor and MANTIS with their lists of top loci in COAD/READ, UCEC and STAD.]{The performance of mSINGS, MSISensor and MANTIS with their lists of top loci in COAD/READ, UCEC and STAD. The accuracy of each tool over the 275 tumor-normal pairs of test data in COAD/READ (\subref{table:msilandscape:loci_number_perf_coadread}), UCEC (\subref{table:msilandscape:loci_number_perf_ucec}) and STAD (\subref{table:msilandscape:loci_number_perf_stad}) with each loci list is provided. Top loci were determined using the samples from all three cancer types. The results with 2539 loci (without loci shortlisting) are included for reference and are broken down per-cancer type.}
+        \label{table:msilandscape:loci_number_perf}
+    \end{table}
+\end{landscape}

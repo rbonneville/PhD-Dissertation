@@ -1,0 +1,36 @@
+%for vita
+\newcommand*{\cofirst}[0]{\textsuperscript{*}}
+\newcommand*{\pmid}[1]{\underline{\href{https://pubmed.ncbi.nlm.nih.gov/#1/}{#1}}}
+
+%for 240
+%using \def to avoid t1 issues and whether or not something else defines \textapprox
+\def\textapprox{\raisebox{0.5ex}{\texttildelow}}
+
+\DeclareMathOperator{\vaf}{VAF}
+
+\newcommand*{\mtpose}{^{\mathsf{T}}}
+
+\newcommand*{\twodots}{\mathinner {\ldotp \ldotp}}
+
+%for 303
+\DeclareMathOperator*{\argmax}{argmax}
+\DeclareMathOperator{\cov}{Cov}
+
+%for SCLC
+\DeclareMathOperator{\pBinom}{pBinom}
+\DeclareMathOperator{\pNorm}{p\mathcal{N}}
+\DeclareMathOperator{\Uniform}{Uniform}
+
+%for MSI clones
+\DeclareMathOperator{\sse}{SSE}
+
+
+\algnewcommand{\IfThenElse}[3]{% \IfThenElse{<if>}{<then>}{<else>}
+  \State \algorithmicif\ #1\ \algorithmicthen\ #2\ \algorithmicelse\ #3}
+
+\algnewcommand{\IfThen}[2]{% \IfThen{<if>}{<then>}
+  \State \algorithmicif\ #1\ \algorithmicthen\ #2}
+
+\newcommand*{\ssig}{\textsuperscript{*}}
+\newcommand*{\ssigg}{\ssig{}\ssig{}}
+\newcommand*{\ssiggg}{\ssig{}\ssigg{}}
